@@ -1,0 +1,79 @@
+{
+  "configuration": {
+    "model": "Base0_mrna_full_no_se",
+    "pretrained_folds": 10,
+    "seeds": [42, 123, 456],
+    "n_epochs": 100,
+    "batch_size": 16,
+    "lr": 0.0001,
+    "weight_decay": 0.0005,
+    "pearson_weight": 0.5,
+    "split_strategy": "fixed sequence/modification group manifest",
+    "finetune_fraction": 0.3333333333,
+    "split_seed_used_to_create_manifest": 126,
+    "split_group_columns": ["ori_as", "ori_ss", "cm_as", "cm_ss"],
+    "preferred_accession": "NM_001382817.3",
+    "finetuned_modules": ["BatchNorm", "full DNN"],
+    "frozen_modules": "all remaining Base0 modules",
+    "holdout_used_for_training_or_selection": false,
+    "auc_threshold": 0.7
+  },
+  "split_audit": {
+    "wet_rows": 207,
+    "finetune_rows": 69,
+    "holdout_all_rows": 138,
+    "holdout_invitro_rows": 138,
+    "finetune_sources": {
+      "AGT_cell_screen": 59,
+      "AGT_cell_screen+rep_avg": 10
+    },
+    "holdout_sources": {
+      "AGT_cell_screen": 129,
+      "AGT_cell_screen+rep_avg": 9
+    },
+    "sequence_modification_group_overlap": {
+      "checked": true,
+      "group_columns": ["ori_as", "ori_ss", "cm_as", "cm_ss"],
+      "overlap_unique_sequence_modification_inputs": 0,
+      "finetune_unique_sequence_modification_inputs": 65,
+      "holdout_unique_sequence_modification_inputs": 117
+    },
+    "model_input_overlap": {
+      "checked": true,
+      "overlap_unique_inputs": 0,
+      "finetune_rows_with_holdout_twin": 0,
+      "holdout_rows_with_finetune_twin": 0
+    },
+    "pretraining_overlap": {
+      "wet_rows": 207,
+      "exact_sequence_and_modification_overlap_rows": 0,
+      "same_unmodified_duplex_overlap_rows": 97
+    }
+  },
+  "zero_shot_10fold_ensemble": {
+    "n": 138,
+    "pcc": 0.5950873626480245,
+    "spcc": 0.3565234468063817,
+    "rmse": 0.1721417237267817,
+    "mae": 0.13704324024527315,
+    "auc": 0.659051724137931
+  },
+  "finetuned_10fold_seed_mean": {
+    "n": 138,
+    "pcc": 0.6515990725297287,
+    "spcc": 0.6293264657499985,
+    "rmse": 0.14997621772963718,
+    "mae": 0.11023947073586783,
+    "auc": 0.8140086206896553
+  },
+  "manuscript_rounded": {
+    "zero_shot": {"pcc": 0.595, "spcc": 0.357, "auc": 0.659},
+    "finetuned": {"pcc": 0.652, "spcc": 0.629, "auc": 0.814}
+  },
+  "artifact_sha256": {
+    "data/agt_207.csv": "94de0be65c82bebbd3fca5dbd6345ab3a1ebc25812610984c14fa1e6c5325ad2",
+    "data/AGT.fasta": "b2d82160ed1b21704566f92add378d4c96478f7c2c23db8d428759d3fe2279ff",
+    "split_manifest.csv": "88f822e4319ce9d6da11acffd0378ed3494bfd22025ce23f53840b57bf5455fb",
+    "results/holdout_predictions.csv": "419b0049fd65c4f0c0bf646c650118f1e83233e459842e563c6fc470b4fe8201"
+  }
+}

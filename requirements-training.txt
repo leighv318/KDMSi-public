@@ -1,0 +1,8 @@
+# IMPORTANT: install this file only with:
+#   python -m pip install --no-deps -r requirements-training.txt
+#
+# allRank 1.4.3 declares torch<=1.8 and torchvision<=0.9 in its 2021 wheel
+# metadata. KDMSi uses its ApproxNDCG loss with the repository's current,
+# CUDA-matched PyTorch stack, so allowing pip to resolve those obsolete pins
+# would silently replace the working framework installation.
+allRank==1.4.3

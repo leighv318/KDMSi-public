@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime outputs
+output/
+logs/
+runs/
+*.log
+
+# Large external assets / generated caches
+*.zip
+*.tar
+*.tar.gz
+*.pt
+*.pth
+*.ckpt
+*.onnx
+liubin_pipeline/potency_prediction/pretrain_models/
+base0model/output_*/
+rnafm/
+references/
+base0model/data/mrna_rnafm_22622_maxlen65.npy
+base0model/data/mrna_rnafm_per_residue_base3style.npy
+base0model/data/mrna_rnafm_pooled_base3style.npy
+base0model/data/RNAFM_ENCODING/
+Base3model/data/rnafm_cache/
+Base3model/data/thermo_cache_sirna/
+base0model/agt_adaptation/cache/
+base0model/agt_adaptation/run_output/
+liubin_pipeline/genomes/GRCh38_rna_ref/reference.fasta
+liubin_pipeline/off_target/NM_SEQ.csv
+liubin_pipeline/output/
+
+# Web build artifacts (large model exports; distributed via Release/R2, not git)
+web_export/artifacts/
+/webapp

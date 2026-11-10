@@ -1,0 +1,16 @@
+numpy
+pandas
+torch
+torchvision
+scikit-learn
+scipy
+matplotlib
+# Import-time prerequisites of the legacy allRank loss package. allRank itself
+# must be installed with --no-deps from requirements-training.txt so its old
+# torch<=1.8 metadata cannot downgrade the CUDA-matched PyTorch installation.
+gcsfs
+attrs
+tqdm
+ViennaRNA
+pysam
+biopython

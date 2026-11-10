@@ -1,0 +1,27 @@
+name: kdmsi
+channels:
+  - conda-forge
+  - pytorch
+  - bioconda
+dependencies:
+  - python=3.9
+  # ONNX Runtime 1.20 requires NumPy >=1.21.6; stay on the NumPy 1.x ABI.
+  - numpy>=1.21.6,<2
+  - pandas
+  - scikit-learn
+  - scipy
+  - matplotlib
+  - pytorch
+  - torchvision
+  # Import-time prerequisites for the separately installed allRank loss.
+  - gcsfs
+  - attrs
+  - tqdm
+  - viennarna
+  - pysam
+  - biopython
+  - pip
+  - pip:
+      # Export + CPU parity validation of the browser ONNX models.
+      - onnx==1.16.2
+      - onnxruntime==1.20.1

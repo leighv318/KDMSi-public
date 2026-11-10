@@ -1,0 +1,9 @@
+# Optional browser-model export and Python parity checks.
+# This includes the main KDMSi environment; use the root requirements.txt alone
+# when ONNX export/validation is not needed.
+-r ../requirements.txt
+
+# ONNX Runtime 1.20 supports the opset-17 graphs emitted by the exporters.
+numpy>=1.21.6,<2
+onnx==1.16.2
+onnxruntime==1.20.1
