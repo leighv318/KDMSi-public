@@ -142,16 +142,14 @@ gvae_represents = np.load(
 
 
 # ---------------- cell-type (source) encoding ----------------
-# index 0 = not reported / missing; indices 1-N = known cell types.
-# Keep the established index order explicit so the unchanged categories retain
-# their historical indices. Index 18 is now HeLa-eGFP; the former literal
-# "Unknown cell line" records are normalized to "Not reported" and map to 0.
+# Index 0 covers missing labels and Not reported. The historical literal
+# Unknown cell line keeps its own index (18).
 _CELL_TYPE_LIST = [
     'Be(2)C cell line', 'COS7', 'HEK293A', 'Hela', 'Hep3B', 'HepG2', 'Hepa1-6', 'Huh7',
     'Human iPSC-derived cortical neurons', 'Non-human hepatocytes',
     'Primary Cynomolgus Monkey Hepatocytes', 'Primary Macaque Hepatocytes',
     'Primary human hepatocytes', 'Primary mouse hepatocytes',
-    'RT-4', 'SH-SY5Y cell line', 'T98G cell', 'HeLa-eGFP',
+    'RT-4', 'SH-SY5Y cell line', 'T98G cell', 'Unknown cell line',
 ]
 CELL_TYPE2IDX = {ct: i + 1 for i, ct in enumerate(_CELL_TYPE_LIST)}
 NUM_CELL_TYPES = len(_CELL_TYPE_LIST) + 1  # +1 for index-0 unknown
